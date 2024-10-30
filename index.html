@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cunter test</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Counter Eliti</h1>
+  </header>
+
+  <section>
+    <h2>Counter</h2>
+    <p id="result">0</p>
+    <div class="buttons">
+      <button class="decrease" onclick="decrease()">-</button>
+      <button class="increase" onclick="increment()">+</button>
+    </div>
+    <div class="reset">
+      <button class="clear" onclick="reset()">reset</button>
+    </div>
+  </section>
+
+  <script>
+    //estado inicial da aplicação
+    let inicialNumber = 0
+
+    //funções para aumentar, diminuir e resetar valor
+    function increment() {
+      inicialNumber++
+      render()
+    }
+
+    function decrease() {
+      inicialNumber--
+      render()
+    }
+
+    function reset() {
+      inicialNumber = 0
+      render()
+    }
+
+    // jogar o estado da aplicação na tela
+    function render() {
+      const valor = document.querySelector("#result")
+      valor.innerText = inicialNumber
+    }
+
+    // iniciar
+    render()
+  </script>
+</body>
+
+</html>
